@@ -6,7 +6,9 @@ from io import BytesIO
 
 os.makedirs("./DadosENADE", exist_ok=True)
 
-lista_arquivos = ["https://download.inep.gov.br/microdados/Enade_Microdados/microdados_enade_2019.zip","https://download.inep.gov.br/microdados/Enade_Microdados/microdados_enade_2018.zip","https://download.inep.gov.br/microdados/Enade_Microdados/microdados_Enade_2017_portal_2018.10.09.zip"]
+lista_arquivos = ["https://download.inep.gov.br/microdados/Enade_Microdados/microdados_enade_2019.zip",
+"https://download.inep.gov.br/microdados/Enade_Microdados/microdados_enade_2018.zip",
+"https://download.inep.gov.br/microdados/Enade_Microdados/microdados_Enade_2017_portal_2018.10.09.zip"]
 
 for url in lista_arquivos :
     filebytes = BytesIO(
