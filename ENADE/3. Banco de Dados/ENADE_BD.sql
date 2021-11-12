@@ -1,11 +1,3 @@
-import sqlite3
-
-bd_connection = sqlite3.connect('DW_ENADE.db')
-
-cursor = bd_connection.cursor()
-
-cursor.execute("""
-
 -- -----------------------------------------------------
 -- Table `instituicao`
 -- -----------------------------------------------------
@@ -198,9 +190,3 @@ CREATE TABLE IF NOT EXISTS `tabela_fatos` (
     REFERENCES `questionarios` (`id_questionario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
-""")
-
-bd_connection.commit()
-
-bd_connection.close()

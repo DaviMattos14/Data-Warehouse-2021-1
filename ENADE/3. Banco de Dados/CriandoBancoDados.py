@@ -1,10 +1,10 @@
 import sqlite3
 
-bd_connection = sqlite3.connect('DW_ENADE.db')
+bd_connection = sqlite3.connect("ENADE.db")
 
 cursor = bd_connection.cursor()
 
-sql_script = open("DB_ENADE.sql", "r")
+sql_script = open("/Users/conta/Desktop/Data-Warehouse-2021-1/ENADE/3. Banco de Dados/ENADE_BD.sql")
 
 sql_str = sql_script.read()
 
