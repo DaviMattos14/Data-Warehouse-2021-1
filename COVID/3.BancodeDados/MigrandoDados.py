@@ -3,10 +3,12 @@ import sqlite3
 from sqlite3.dbapi2 import Row
 import pandas as pd
 
-conn = sqlite3.connect("teste_COVID.db")
+print("--- Migrando dados para o Banco de Dados COVID ---")
+
+conn = sqlite3.connect("COVID.db")
 cursor = conn.cursor()
 
-caminho = "C:/Users/conta/Desktop/Data-Warehouse-2021-1/COVID/1. Coleta de Dados/DADOS_COVID-19_MG/teste.txt"
+caminho = "teste.txt"
 
 arquivo = pd.read_csv(caminho, sep=";", dtype=str)
 insert_inicio = """
