@@ -1,4 +1,4 @@
-run-seed: 
+run-seed-enade: 
 	python3 -m venv .venv
 	bash -c "source .venv/bin/activate"
 	pip3 install --upgrade pip
@@ -6,7 +6,7 @@ run-seed:
 	clear
 	python3 1.ColetaDeDados/BaixarArquivosEnade.py
 
-run-create:
+run-create-enade:
 	python3 -m venv .venv
 	bash -c "source .venv/bin/activate"
 	pip3 install --upgrade pip
@@ -14,15 +14,15 @@ run-create:
 	clear
 	python3 3.BancodeDados/CriandoBancoDados.py
 
-run-migrate:
+run-migrate-enade:
 	python3 -m venv .venv
 	bash -c "source .venv/bin/activate"
 	pip3 install --upgrade pip
 	pip3 install -r requirements.txt
 	clear
 
-run-create-seed-migrate:
-	make run-seed
-	make run-create
-	make run-migrate
+run-create-seed-migrate-enade:
+	make run-seed-endade
+	make run-create-endade
+	make run-migrate-endade
 
