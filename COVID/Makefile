@@ -25,7 +25,6 @@ run-migrate-covid:
 run-create-seed-migrate-covid:
 	make run-seed-covid
 	make run-create-covid
-
 	make run-migrate-covid
 
 run-streamlit-covid:
@@ -33,8 +32,6 @@ run-streamlit-covid:
 	bash -c "source .venv/bin/activate"
 	pip3 install --upgrade pip
 	pip3 install -r requirements.txt
+	pip3 install -r requirements_streamlit.txt
 	clear
 	streamlit run 4.VisualizacaoLearningDados/InterfaceStreamlit.py
-
-	make run-migrate-covid
-

@@ -6,7 +6,7 @@ bd_connection = sqlite3.connect("COVID.db")
 cursor = bd_connection.cursor()
 
 sql_script = open(
-    "/Users/lulianom/Documents/Codes/Data-Warehouse-2021-1/COVID/3.BancodeDados/SCRIPT_COVID_MG.sql"
+    "/Users/lulianom/Documents/Codes/Data-Warehouse-2021-1/COVID/2.ModelagemDimensional/SCRIPT_SQL_COVID_MG.sql"
 )
 
 sql_str = sql_script.read()

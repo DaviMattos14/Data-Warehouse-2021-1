@@ -56,18 +56,13 @@ inserirDados(arquivo_casos)
 inserirDados(arquivo_internados)
 inserirDados(arquivo_obitos)
 inserirDados(arquivo_recuperados)
-print("--- Migrando dados para o Banco de Dados COVID ---")
-
-conn = sqlite3.connect("COVID.db")
-cursor = conn.cursor()
-
-caminho = "teste.txt"
-
-conn = sqlite3.connect("COVID_MG.db")
 
 conn = sqlite3.connect("COVID_MG.db")
 cursor = conn.cursor()
 
+sql_script = open(
+    "/Users/conta/Desktop/3. Banco de Dados/COVID/SCRIPT_SQL_COVID_MG.sql"
+)
 
 inicio_query_casos = """
 INSERT INTO tabela_fatos (NUM_CASOS,  DATA_, Localidade_MUNIC_RESIDENCIA)
