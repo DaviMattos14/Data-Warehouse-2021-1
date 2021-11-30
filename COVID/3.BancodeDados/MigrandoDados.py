@@ -1,5 +1,13 @@
 import sqlite3
 
+
+print("--- Migrando dados para o Banco de Dados COVID ---")
+
+conn = sqlite3.connect("COVID.db")
+cursor = conn.cursor()
+
+caminho = "teste.txt"
+
 conn = sqlite3.connect("COVID_MG.db")
 
 cursor = conn.cursor()
