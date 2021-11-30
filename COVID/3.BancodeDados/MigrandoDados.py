@@ -1,7 +1,5 @@
-from os import sep
 import sqlite3
-from sqlite3.dbapi2 import Row
-import pandas as pd
+
 
 print("--- Migrando dados para o Banco de Dados COVID ---")
 
@@ -10,22 +8,14 @@ cursor = conn.cursor()
 
 caminho = "teste.txt"
 
-arquivo = pd.read_csv(caminho, sep=";", dtype=str)
-insert_inicio = """
-INSERT INTO Casos (municipio, NUM_CASOS, DATA_CASOS, codIBGE, urs, MICRO, regiao)
-VALUES
-"""
-values = ",".join(
-    [
-        "('{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(
-            row[0], row[1], row[2], row[3], row[4], row[5], row[6]
-        )
-        for id, row in arquivo.iterrows()
-    ]
-)
+conn = sqlite3.connect("COVID_MG.db")
 
-query = insert_inicio + values
+cursor = conn.cursor()
 
-conn.execute(query)
-conn.commit()
+sql_script = open("/Users/conta/Desktop/3. Banco de Dados/COVID/SCRIPT_SQL_COVID_MG.sql")
+
+sql_str = sql_script.read()
+
+cursor.executescript(sql_str)
+
 conn.close()
