@@ -56,6 +56,14 @@ inserirDados(arquivo_casos)
 inserirDados(arquivo_internados)
 inserirDados(arquivo_obitos)
 inserirDados(arquivo_recuperados)
+print("--- Migrando dados para o Banco de Dados COVID ---")
+
+conn = sqlite3.connect("COVID.db")
+cursor = conn.cursor()
+
+caminho = "teste.txt"
+
+conn = sqlite3.connect("COVID_MG.db")
 
 conn = sqlite3.connect("COVID_MG.db")
 cursor = conn.cursor()
