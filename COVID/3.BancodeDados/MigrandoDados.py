@@ -1,29 +1,13 @@
-from os import sep
 import sqlite3
-from sqlite3.dbapi2 import Row
-import pandas as pd
 
-conn = sqlite3.connect("teste_COVID.db")
+conn = sqlite3.connect("COVID_MG.db")
+
 cursor = conn.cursor()
 
-caminho = "C:/Users/conta/Desktop/Data-Warehouse-2021-1/COVID/1. Coleta de Dados/DADOS_COVID-19_MG/teste.txt"
+sql_script = open("/Users/conta/Desktop/3. Banco de Dados/COVID/SCRIPT_SQL_COVID_MG.sql")
 
-arquivo = pd.read_csv(caminho, sep=";", dtype=str)
-insert_inicio = """
-INSERT INTO Casos (municipio, NUM_CASOS, DATA_CASOS, codIBGE, urs, MICRO, regiao)
-VALUES
-"""
-values = ",".join(
-    [
-        "('{}', '{}', '{}', '{}', '{}', '{}', '{}')".format(
-            row[0], row[1], row[2], row[3], row[4], row[5], row[6]
-        )
-        for id, row in arquivo.iterrows()
-    ]
-)
+sql_str = sql_script.read()
 
-query = insert_inicio + values
+cursor.executescript(sql_str)
 
-conn.execute(query)
-conn.commit()
 conn.close()
