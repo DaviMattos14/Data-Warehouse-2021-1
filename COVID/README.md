@@ -42,5 +42,5 @@ Este projeto não possui variáveis de ambiente
 ## Time e Responsáveis pelo repositório
 
 - Luciano Martins DRE: 120125295
-- Davi Matos DRE:
+- Davi Matos DRE: 119133049
 
